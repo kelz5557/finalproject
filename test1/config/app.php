@@ -57,7 +57,17 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL'),
+    
+    
+    'providers' => [
 
+        Yajra\DataTables\DataTablesServiceProvider::class,
+    ],
+    'aliases' => [
+     
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+    ],
+ 
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

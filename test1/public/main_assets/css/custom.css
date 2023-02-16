@@ -493,6 +493,7 @@ textarea:focus::placeholder{
 	color: #fff;
 }
 .card{
+	direction: rtl;
 	display: inline-block;
 	margin: 10px;
 }
