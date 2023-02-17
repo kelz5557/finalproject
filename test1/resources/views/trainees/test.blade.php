@@ -46,7 +46,7 @@
 														<th>رقم </th>
 														<th>courses</th>
 														<th>تاريخ القبول</th>
-														
+														<th>تعديل</th>
 														<th>حذف</th>
 													</tr>
 												</thead>
@@ -55,18 +55,11 @@
 													@foreach($index->course as $tests)
 													<?php $i++ ?>	
 													<tr>
-														<td><strong>{{$tests['id']}}</strong></td>
+														<td><strong>{{$i}}</strong></td>
 														<td>{{$tests['course_name']}}</td>
                                                         <td>{{$tests['created_at']}}</td>
-														
-														<td>
-                                                            
-															<form action="{{route('deletecourses',['course_id'=>$tests['id'],'trainee_id'=>$index['id']])}}" method="POST" >
-																@csrf
-																@method('DELETE')
-																<input type="submit" value="حذف" class="btn btn-sm btn-danger"></input>
-															</form>
-														</td>
+														<td>1</td>
+														<td>1</td>
                                                         
 														
 													</tr>
@@ -76,17 +69,14 @@
 											
 												</tbody>
 											</table>
-                                            <div>
-                                                <h3>  اضافة دورة جديدة </h3>
-                                            </div>
-                                            <form action="{{route('traineecourses.store')}}" method="POST">
+                                            <form action="{{route('tests.store')}}" method="POST">
                                                 @csrf
                                                 <div class="row">
                                                     
                                                     
                                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                                         <div class="form-group">
-                                                            <label class="form-label"><strong>إسم الدورة</strong></label>
+                                                            <label class="form-label">إسم الدورة</label>
                                                             <select name="coursename" type="text" class="form-control">
                                                                 @foreach ($test as $t)
                                                                 <option value="{{$t->id}}">{{$t->course_name}}</option>
@@ -100,7 +90,7 @@
                                                     
                                                     
                                                     
-                                                    <input name="trainee_id" value="{{$index['id']}}" type="hidden">
+                                                    
                                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                                         <button type="submit" class="btn btn-primary">إرسال</button>
                                                     </div>

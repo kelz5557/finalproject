@@ -118,8 +118,12 @@ class adscontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($ad)
     {
-        //
+        
+        
+        $to_delete=ad::findorfail($ad);
+        $to_delete->delete();
+        return redirect()->route('ads.index');
     }
 }

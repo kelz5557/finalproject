@@ -77,10 +77,11 @@
         <!-- Start Header Middle -->   
 
         <div class="container header-middle">
-            <div class="row"> <span class="col-xs-6 col-sm-3"><a href="index.html"><img src="{{url('main_assets/images/logo2.png')}}" class="img-responsive" alt="" width="75" height="75"><img src="{{url('main_assets/images/logo3-with.png')}}" class="img-responsive" alt="" width="100" height="100"></a></span>
+            <div class="row"> <span class="col-xs-6 col-sm-3"><a href="{{url('/')}}"><img src="{{url('main_assets/images/logo2.png')}}" class="img-responsive" alt="" width="75" height="75"><img src="{{url('main_assets/images/logo3-with.png')}}" class="img-responsive" alt="" width="100" height="100"></a></span>
                 <div class="col-xs-6 col-sm-3"></div>
                 <div class="col-xs-6 col-sm-9">
                     <div class="contact clearfix">
+                        
                         <a href="{{url('/login')}}" class="login">تسجيل الدخول <span class="icon-more-icon"></span></a>
                     </div>
                 </div>
@@ -99,36 +100,17 @@
                         <button class="search-btn"><span class="icon-search-icon"></span></button>
                     </form>
                     <ul class="nav navbar-nav">
-                        <li class="dropdown"> <a data-toggle="dropdown" href="#">الصفحة الرئيسية <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">الرئيسية 1</a></li>
-                                <li><a href="#">الرئيسية 2</a></li>
-                            </ul>
-                        </li>
+                        <li class="dropdown"> <a data-toggle="dropdown" href="#">الصفحة الرئيسية <i class="fa fa-angle-down" aria-hidden="true"></i></a>  </li>
                         <li> <a href="{{url('/aboutus')}}">عن المركز</a></li>
-                        <li class="dropdown"> <a data-toggle="dropdown" href="">دوراتنا <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <li class="dropdown"> <a data-toggle="dropdown" href="#">دوراتنا <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{url('/ourcourses')}}">كل الدورات</a></li>
+                               
+                                
                             </ul>
                         </li>
-                        <li> <a href="gallery.html">معرض الصور</a></li>
-                        <li class="dropdown"> <a data-toggle="dropdown" href="#">الصفحات <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="visible-xs"><a href="register.html">Register</a></li>
-                                <li class="visible-xs"><a href="apply-online.html">Apply online</a></li>
-                                <li class="visible-xs"><a href="blog.html">Blog</a></li>
-                                <li class="visible-xs"><a href="faq.html">FAQs</a></li>
-                                <li><a href="news.html">Latest News</a></li>
-                                <li><a href="testimonials.html">Testimonials</a></li>
-                                <li><a href="faq1.html">FAQ 1</a></li>
-                                <li><a href="faq2.html">FAQ 2</a></li>
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                <li class="hidden-xs"><a href="privacy.html">Privacy Policy</a></li>
-                                <li class="hidden-xs"><a href="terms.html">Terms of Use</a></li>
-                                <li class="hidden-xs"><a href="generic-ui.html">Generic UI</a></li>
-                            </ul>
-                        </li>
-                        <li> <a href="contact.html">تواصل معنا</a></li>
+                        <li> <a href="#">معرض الصور</a></li>
+                        <li> <a href="#">تواصل معنا</a></li>
                     </ul>
                 </div>
             </div>
@@ -136,68 +118,62 @@
         <!-- End Navigation -->
     </header>
 
-    <!-- ==============================================
-    ** Banner Carousel **
-    =================================================== -->
-    <div class="banner-outer">
-        <div class="banner-slider">
-            <div class="slide1">
-                <div class="container">
-                    <div class="content animated fadeInRight">
-                        <div class="fl-right">
-                            <h1 class="animated fadeInRight">تعرف على  <span class="animated fadeInRight">مركز الزاوية للحاسوب</span> </h1>
-                            <p class="animated fadeInRight"></p>
-                            <a href="#" class="btn animated fadeInRight">اعرف المزيد <span class="icon-more-icon"></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slide2">
-                <div class="container">
-                    <div class="content">
-                        <h1 class="animated fadeInUp">تعرف على </h1>
-                        <p class="animated fadeInUp">مركز الحاسوب وتقنية المعلومات بجامعة الزاوية</p>
-                        <a href="#" class="btn animated fadeInUp">اقرأ المزيد <span class="icon-more-icon"></span></a>
-                        <a href="#" class="btn white animated fadeInUp hidden-xs">تواصل معنا <span class="icon-more-icon"></span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="slide3">
-                <div class="container">
-                    <div class="content animated fadeInLeft">
-                        <h1 class="animated fadeInLeft">تواصل الان</h1>
-                        <p class="animated fadeInLeft">جامعة الزاوية.</p>
-                        <a href="#" class="btn animated fadeInLeft">اعرف المزيد <span class="icon-more-icon"></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <!-- ==============================================
     ** Our Cources **
     =================================================== -->
     <section class="our-cources padding-lg">
-
         <div class="container">
-            <h2> الدورات التي يقدمها المركز </h2>
-            <ul class="course-list owl-carousel">
-                @foreach ($ads as $ad)
+          
+            <section class="about inner padding-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 left-block">
+                            <h2>نبذة عن المركز</h2>
+                            <p>   بناء على الأهمية التي يمثلها الحاسوب في تطوير التعليم ومواكبة حركة التطور العلمي، وتقديم أفضل الخدمات في المجالين العلمي والإداري.</p>
+                            <p>انطلقت فكرة انشاء هذا المركز بالجامعة في العام 1991ف، واستمرت عملية الانشاء والتطوير لهذا الصرح العلمي، وبناء الهيكل الإداري والفني الذي يتمكن من تسيير المركز والنهوض به ومواكبة التطور الهائل الحاصل في مجال الحاسوب وبرامجه وتطبيقاته المختلفة</p>
+                            <p>    وخلال هذه الفترة الزمنية المؤهلة والمدربة وتصميم المنظومات وتقديم خدمات متميزة في مختلف فروع العلم والمعرفة داخل الجامعة وخارجها.</p>
+                        </div>
+                        <div class="col-md-7 left-block">
+                            <h2>رسالة المركز وأهدافه</h2>
+                            <p>1.	تطوير الجهاز الإداري بالجامعة بإدخال الميكنة اليه من خلال تصميم المنظومات المختلفة اللازمة لتحديث كافة إدارات الجامعة وكلياتها واقسامها وتدريب الموظفين المختصين بتشغيل تلك التقنية على تشغيل تلك المنظومات.</p>
+                            <p>2.	تدريب وتأهيل موظفي الجامعة على استعمال الحاسوب مساهمة في تطوير أدائهم.</p>
+                            <p>3.	تنظيم الدورات التدريبية والتأهيلية للراغبين من داخل الجامعة وخارجها وفق لوائح خاصة تنظم ذلك وإعداد جداول زمنية للتدريب تمكيناً للمتدربين من المشاركة الفعلية في بناء مجتمعهم.</p>
+                            <p>4.	تحديث برامج التدريب ومواكبة التطوير السريع الحاصل في كافة البرمجيات المتعلقة بالحاسوب.</p>
+                        </div>
+                        <div class="col-md-7 left-block">
+                            <h2>الخطة المقترحة للعام 2023م</h2>
+                            <p>يهدف المركز ومن خلال الخطة التدريبية المعدة للعام 2023م إلى الوصول الى تحقيق الأهداف التالية:</p>
+                            <p>1.	المساهمة في محو أمية الحاسوب لدى المتدربين داخل وخارج الجامعة وذلك بزيادة التركيز على الدورات الأساسية للمبتدئين وتطوير مناهجها.</p>
+                            <p>2.	إدخال مقررات جديدة متقدمة في مجال الحاسوب للرفع من كفاءة وقدرة المتخصصين في مجال الحاسوب داخل الجامعة وخارجها وذلك بإحداث دورات متقدمة في هذا المجال ويتم تغطيتها من داخل الكادر الفني بالمركز والاستعانة ببعض الخبرات الفنية في مجال الحاسوب من خارج المركز (سوى من أعضاء هيئة التدريس بالجامعة او خبراء من خارج الجامعة على سبيل التعاون) وكل ذلك يدخل ضمن أطار تنمية إيرادات المركز.</p>
+                            <p>3.	التعاون الوثيق والمستمر مع كافة إدارات الجامعة وكلياتها في مجال التدريب وخاصة مكتب التدريب بالجامعة لإنجاح برامجه المتعلقة بتدريب وتأهيل الموظفين التابعين للجامعة بخلق برامج تدريبية على مدار السنة لتأهيل وتدريب الموظفين التابعين للجامعة.</p>
+                            <p>4.	تقديم الاستشارات الفنية في مجال الحاسوب لطلاب الجامعة بمختلف تخصصاتهم فيما يتعلق بالمناهج المتعلقة بالحاسوب وتسهيل كافة الإجراءات امام طلابنا للاستفادة من كافة الخبرات الموجودة بالمركز سواء كان ذلك عن طريق تقديم المساعدة لهم في تنفيذ برامجهم العلمية او تقديم دورات منهجية لهم وبأسعار رمزية تشجيعاً لهم على بدل المزيد من الجهد والعطاء.</p>
+                          
+                        </div>
+                        <div class="col-md-7 left-block">
+                            <h2>شروط عامة للالتحاق بالدورة</h2>
+                            <p>1.	يدفع المشترك رسوم الدورة كاملة عند التسجيل بالدورة.</p>
+                            <p>2.	لا يحق للمتدرب سحب رسم الاشتراك بمجرد التسجيل الدورة.</p>
+                            <p>3.	يحتفظ المتدرب بحقه في الالتحاق بدورة تدريبية تالية خلال (3) أشهر من تاريخ غيابه عن الدورة التدريبية المسجل بها شريطة إيقافه لتسجيله وتقديم مبرر مقنع لغيابه عن الدورة السابقة.</p>
+                            <p>4.	يفصل المتدرب من الدورة ويحرم من شهادة إتمام الدورة التدريبية في الحالات التالية:
+<p>i.	إذا تغيب عن 25% من البرنامج المرسوم للدورة غياباً متصلاً دون تقديم مبرر.</p>
+<p>ii.	إذا تغيب عن 30% من البرنامج المرسوم للدورة غياباً متصلاً دون تقديم مبرر.</p>
+<p>iii.	إذا أخل بالنظم واللوائح والآداب العامة المعمول بها داخل المركز والجامعة .</p>
+</p>
+                            <p>5.	يتم اجراء ثلاث امتحانات ع الأقل لكل دورة يخصص 60% من مجموع درجاتها للجانب العملي و20% للجانب النظري و20% من مجموع الدرجات للمواظبة والسلوك والمشاركة داخل القاعة</p>
+                            <p>6.	يمنح المتدرب شهادة إتمام دورة تدريبية في حال اجتاز مقررات الدورة بنجاح.</p>
+                          
+                       </div>
+                    </div>
+
                     
+                </div>
+
                 
-              <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{url('main_assets/images/pic1.jpg')}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{$ad['title']}}</h5>
-          <p class="card-text">{{$ad['description']}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+            </section>
         </div>
-        
-      </div>
-      @endforeach
-      
-            </ul>
-        </div>
+
     </section>
     
     <!-- ==============================================

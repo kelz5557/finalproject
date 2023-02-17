@@ -2,8 +2,9 @@
 @extends('layout')
 @section('content') 
 
-<div class="container-fluid">
-	<div class="certifcate">
+<div class="container-fluid" >
+    <section id="certifcate" >
+	<div class="certifcate"  >
     <div class="certifcate-header">
         
                 <img  id="img1" src="{{url('dashboard_assets/images/logo2.png')}}" alt="">
@@ -16,8 +17,8 @@
 					<div class="col-xl-12 col-xxl-12 col-sm-12">
                         <div class="card">
                            
-							<div class="card-body">
-                                <form action="#" method="post">
+							<div class="card-body" >
+                                <form action="#" method="post" >
 									
                                             <div class="cert">	
                                                 <p>يشهد مركز الحاسوب والمعلومات بجامعة الزاوية بان الاخ/الاخت:</p>
@@ -55,19 +56,28 @@
                                             <div class="cert c5"> <p>رئيس الجامعة</p></div>
                                            
                                             
-                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <center>
-                                                    <button onclick="javascript:window.print();" class="btn btn-sm btn-primary" type="button"> <i class="fa fa-print"></i> طباعة</button>
-                                                    <button type="submit" class="btn btn-light">إلغاء</button>
-                                                    </center>
-                                                </div>
+                                            
+                                              
                                             
 								</form>
                             </div>
                         </div>
                     </div>
 </div>
-</div>              
+</div> 
+</section>
+<div class="col-lg-12 col-md-12 col-sm-12">
+                                                <center>
+                                                    <button  id="print" class="btn btn-sm btn-primary" type="button"> <i class="fa fa-print"></i> طباعة</button>
+                                                <script>
+                                               const printBtn = document.getElementById('print');
+                                               printBtn.addEventListener('click', function () {
+                                                print();
+                                               })
+                                                </script>
+                                                    <button type="submit" class="btn btn-light">إلغاء</button>
+                                                 </center>
+                                            </div>                                                    
 </div>
 
 @endsection 

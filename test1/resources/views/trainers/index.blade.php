@@ -86,11 +86,12 @@
 															<a href="{{route('alltrainers.edit',$index['id'])}}" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
 
 														</td>
-														<td>															<form action="{{route('alltrainers.destroy',['alltrainer'=>$index['id']])}}" method="POST" >
+														<td><form action="{{route('alltrainers.destroy',['alltrainer'=>$index['id']])}}" method="POST" >
 															@csrf
 															@method('DELETE')
 															<input type="submit" value="حذف" class="btn btn-sm btn-danger"></input>
-														</form></td>
+														</form>
+													</td>
 													</tr>
 													
                                                     @endforeach</tbody>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\trainee;
 use App\Models\course;
-
 class traineecontroller extends Controller
 {
     /**
@@ -64,6 +63,7 @@ class traineecontroller extends Controller
         $trainee->gender=strip_tags($request->input('gender'));
 
         $trainee->save();
+
        return redirect()->route('allstudents.create');
     }
 
@@ -73,18 +73,12 @@ class traineecontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-/*     public static function getdata()
-    {
-        return[
-            ['id'=>'1','name'=>'ahmed','age'=>'15','email'=>'kelz@gmail.com'],
-            ['id'=>'2','name'=>'kais','age'=>'24','email'=>'kelz@gmail.com'],
-            ['id'=>'3','name'=>'ali','age'=>'18','email'=>'kelz@gmail.com'],
-        ];
-    } */
+
     public function show($allstudent)
     {
         return view('trainees.show',[
-            'index'=>trainee::findorfail($allstudent)
+            'index'=>trainee::findorfail($allstudent),
+            'test'=>course::all()
         ]);
     }
 

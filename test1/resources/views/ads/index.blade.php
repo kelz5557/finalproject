@@ -40,6 +40,7 @@
 														<th>  المستخدم الذي اضاف الاعلان</th>
 														
 														<th>تعديل</th>
+                                                        <th>حذف</th>
 													</tr>
 									</thead>
 									<tbody>
@@ -59,7 +60,12 @@
                                                 
                                                 <td>
                                                     <a href="{{route('ads.edit',['ad'=>$t['id']])}}" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
+                                                </td>
+                                                <td><form action="{{route('ads.destroy',['ad'=>$t['id']])}}" method="POST" >
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <input type="submit" value="حذف" class="btn btn-sm btn-danger"></input>
+                                                </form>
                                                 </td>												
                                             </tr>
                                             @endforeach

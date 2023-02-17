@@ -140,7 +140,6 @@
                         <ul aria-expanded="false">
                             <li><a href="{{url('/dashboard')}}">لوحة التحكم</a></li>
                             <li><a href="{{url('/register')}}">اضافة مستخدمين</a></li>
-                            <li><a href="{{url('/dashboard/about')}}">حول المركز</a></li>
                             
                         </ul>
                     </li>
@@ -222,7 +221,7 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body">
+        <div class="content-body" >
             <!-- row -->
             @yield('content')
         </div>

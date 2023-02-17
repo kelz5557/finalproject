@@ -14,4 +14,7 @@ class course extends Model
     public function ad(){
         return $this->hasone(ad::class);
     }
+    public function trainee(){
+        return $this->belongstoMany(trainee::class);
+    }
 }

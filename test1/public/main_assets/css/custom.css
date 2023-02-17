@@ -399,6 +399,8 @@ textarea:focus::placeholder{
 }
 .navbar-nav > li {
 	border-right: 1px #3778b6 solid;
+	float: right;
+	direction: rtl;
 }
 .navbar-nav > li > a {
 	text-transform: uppercase;
@@ -493,7 +495,6 @@ textarea:focus::placeholder{
 	color: #fff;
 }
 .card{
-	direction: rtl;
 	display: inline-block;
 	margin: 10px;
 }
@@ -704,12 +705,12 @@ textarea:focus::placeholder{
 }
 .about ul.our-links li .icon {
 	width: 23%;
-	float: left;
+	float: right;
 }
 .about ul.our-links li .detail {
 	width: 60%;
-	padding-left: 20px;
-	float: left;
+	padding-right: 20px;
+	float: right;
 	color: #fff;
 }
 .about ul.our-links li .detail h3 {
@@ -756,9 +757,18 @@ textarea:focus::placeholder{
 	color: #7d7c7c;
 	line-height: 18px;
 	text-transform: uppercase;
+	
 }
 .about .left-block {
-	display: block;
+	display: inline;
+   
+    float: right;
+    text-align: right;
+    max-width: 50%;
+}
+.about .left-block h2 {
+	display: block; 
+    margin-left: 30%;
 }
 .video-block {
 /*
@@ -801,7 +811,12 @@ textarea:focus::placeholder{
 }
 .about p {
 	display: block;
-	padding-bottom: 34px;
+
+    text-align: right;
+    direction: rtl;
+    font-size: large;
+    color: black;
+    font-family: cursive;
 }
 .about .know-more-wrapper {
 	display: block;
@@ -1657,6 +1672,7 @@ ul.our-strength li .title {
 .footer {
 	display: block;
 	background:#3778b6;
+	direction: rtl;
 }
 .footer .row1 {
 	display: block;
@@ -1666,9 +1682,9 @@ ul.our-strength li .title {
 .footer .foot-nav {
 	display: block;
 	width: 30%;
-	padding-left: 30px;
-	float: left;
-	border-left: 1px solid #fff;
+	padding-right: 30px;
+	float: right;
+	border-right: 1px solid #fff;
 }
 .footer .foot-nav ul li {
 	display: block;

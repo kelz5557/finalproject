@@ -48,9 +48,19 @@ Route::get('/', [App\Http\Controllers\main::class,'index']);
 
 //-----------------------------------------------
 
+Route::view('/aboutus', 'aboutus');
+
+
 Route::resource('/ourcourses','App\Http\Controllers\maincourses');
 
 Route::resource('/dashboard/requests','App\Http\Controllers\traineesrequestcontroller')->middleware('auth');
+
+//Route::get('/deletecourses', [App\Http\Controllers\deletecourse::class,'destroy']);
+
+Route::delete('/deletecourses/{course_id}/{trainee_id}',[App\Http\Controllers\deletecourse::class,'destroy'])->name('deletecourses');
+
+
+Route::resource('/traineecourses','App\Http\Controllers\traineecourses');
 
 
 
