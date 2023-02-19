@@ -184,9 +184,7 @@
 							<span class="nav-text">الرسوم</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{url('/dashboard/fees_collection')}}">تحصيل الرسوم</a></li>
-                            <li><a href="{{url('/dashboard/create_certifcate')}}"> إضافةالرسوم</a></li>
-                            <li><a href="{{url('/dashboard/fees_receipt')}}">إيصال الرسوم</a></li>
+                            <li><a href="{{url('/dashboard/fees')}}"> كل الرسوم</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -195,7 +193,7 @@
                     </a>
                     <ul aria-expanded="false">
                         <li><a href="{{url('/dashboard/alltrainers')}}">كل المدربين</a></li>
-                        <li><a href="#">تواصل مع مدربك</a></li>
+                        
                     </ul>
                 </li>
                 <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">

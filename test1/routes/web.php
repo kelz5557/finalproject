@@ -12,6 +12,20 @@ use App\Http\Controllers\traineecontroller;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//auth-------------------------------------------------------------
+
+
+Route::view('/login', 'auth/login');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/dashboard/fees','App\Http\Controllers\receiptcontroller')->middleware('auth');
+
+//requests-----------------------------------------------
+
+Route::resource('/dashboard/requests','App\Http\Controllers\traineesrequestcontroller')->middleware('auth');
 
 //student---------------------------------------------------------
 
@@ -40,47 +54,36 @@ Route::resource('/dashboard/allarchives','App\Http\Controllers\archivescontrolle
 
 //dashboard--------------------------------------------------------
 
-Route::view('/dashboard','dashboardindex')->name("dashboard")->middleware('auth');
+Route::resource('/dashboard','App\Http\Controllers\dashboardmain')->middleware('auth');
 
 //mainpage------------------------------------------------------------
 
 Route::get('/', [App\Http\Controllers\main::class,'index']);
 
-//-----------------------------------------------
+//aboutus-----------------------------------------------
 
 Route::view('/aboutus', 'aboutus');
 
+//ourcourses-----------------------------------------------
 
 Route::resource('/ourcourses','App\Http\Controllers\maincourses');
 
-Route::resource('/dashboard/requests','App\Http\Controllers\traineesrequestcontroller')->middleware('auth');
-
-//Route::get('/deletecourses', [App\Http\Controllers\deletecourse::class,'destroy']);
-
-Route::delete('/deletecourses/{course_id}/{trainee_id}',[App\Http\Controllers\deletecourse::class,'destroy'])->name('deletecourses');
 
 
-Route::resource('/traineecourses','App\Http\Controllers\traineecourses');
+//traineecourses-----------------------------------------------
 
 
-
-Route::view('/fees','fees_collection');
-
+Route::delete('/deletecourses/{course_id}/{trainee_id}',[App\Http\Controllers\deletecourse::class,'destroy'])->name('deletecourses')->middleware('auth');
 
 
+Route::resource('/traineecourses','App\Http\Controllers\traineecourses')->middleware('auth');
 
+//test----------------------------------------------------------------
 
-Route::view('/login', 'auth/login');
+Route::post('/receiptss/{course_id}/{trainee_id}/{cost}/{traineename}/{coursename}',[App\Http\Controllers\receiptss::class,'create'])->name('addreceipt')->middleware('auth');
 
 
 
 
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
-
+Route::resource('/dashboard/receipts','App\Http\Controllers\receipts')->middleware('auth');

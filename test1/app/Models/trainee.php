@@ -11,4 +11,7 @@ class trainee extends Model
     public function course(){
         return $this->belongstoMany(course::class);
     }
+    public function receipt() {
+        return $this->belongsToMany(course::class,user::class,receipt::class);
+        }
 }

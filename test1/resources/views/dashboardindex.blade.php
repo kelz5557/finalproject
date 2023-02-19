@@ -53,7 +53,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="{{url('dashboard_index.html')}}" class="brand-logo">
+            <a href="{{url('/')}}" class="brand-logo">
                 <img class="logo-abbr" src="{{url('dashboard_assets/images/logo2.png')}}" alt="">
                 <img class="logo-compact" src="{{url('dashboard_assets/images/logo3-with.png')}}" alt="">
                 <img class="brand-title" src="{{url('dashboard_assets/images/logo3-with.png')}}" alt="">
@@ -95,14 +95,8 @@
                                 <a  href="#"  role="button" data-toggle="dropdown">
                                     <strong>{{ Auth::user()->name }}</strong></a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="./app-profile.html" class="dropdown-item ai-icon">
-                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                        <span class="ml-2">الملف الشخصي </span>
-                                    </a>
-                                    <a href="./email-inbox.html" class="dropdown-item ai-icon">
-                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                        <span class="ml-2">البريد الوارد </span>
-                                    </a>
+                                   
+                                   
                                     <div> <a class="dropdown-item ai-icon" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                       document.getElementById('logout-form').submit();">
@@ -136,9 +130,9 @@
 							<span class="nav-text">لوحة التحكم</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{url('/dashboard')}}">لوحة التحكم1</a></li>
+                            <li><a href="{{url('/dashboard')}}">لوحة التحكم</a></li>
                             <li><a href="{{url('/register')}}">إضافة مستخدمين</a></li>
-                            <li><a href="#"></a></li>
+                            
                         </ul>
                     </li>
 					
@@ -149,7 +143,7 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="{{url('/dashboard/allstudents')}}">كل المتدربين</a></li>
-                            <li><a href="{{url('/dashboard/addstudent')}}">إضافة المتدربين</a></li>
+                            <li><a href="{{url('/dashboard/allstudents/create')}}">إضافة المتدربين</a></li>
                             <li><a href="{{url('/dashboard/requests')}}"> طلبات الاتحاق بالمركز</a></li>
 
                         </ul>
@@ -160,7 +154,7 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="{{url('/dashboard/allcourses')}}">كل الدورات</a></li>
-                            <li><a href="{{url('/dashboard/addcourse')}}">إضافةالدورات </a></li>
+                            <li><a href="{{url('/dashboard/allcourses/create')}}">إضافةالدورات </a></li>
                        </ul>
                     </li>
 					
@@ -170,9 +164,9 @@
 							<span class="nav-text">الرسوم</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="#">تحصيل الرسوم</a></li>
-                            <li><a href="#"> إضافةالرسوم</a></li>
-                            <li><a href="#">إيصال الرسوم</a></li>
+                            <li><a href="{{url('/dashboard/fees')}}"> كل الرسوم</a></li>
+                            
+                            
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -180,7 +174,7 @@
                         <span class="nav-text">المدربين</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="#">كل المدربين</a></li>
+                        <li><a href="{{url('/dashboard/alltrainers')}}">كل المدربين</a></li>
                        
                     </ul>
                 </li>
@@ -199,9 +193,9 @@
                     <span class="nav-text">الارشيف</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="all-archive.html">الارشيف</a></li>
-                    <li><a href="add-archive.html">إضافة للأرشيف </a></li>
-                    <li><a href="create-certificate.html">إستخراج شهادة </a></li>
+                    <li><a href="{{url('/dashboard/allarchives')}}">الارشيف</a></li>
+                    <li><a href="{{url('/dashboard/allarchives/create')}}">إضافة للأرشيف </a></li>
+                    <li><a href="{{url('/dashboard/create_certifcate')}}">إستخراج شهادة </a></li>
                 </ul>
             </li>
                   					
@@ -216,118 +210,31 @@
             Content body start
         ***********************************-->
         <div class="content-body">
+        
             <!-- row -->
             <div class="container-fluid">
 				    
                 <div class="row">
+                    @foreach ($course as $c)
 					<div class="col-xl-3 col-xxl-4 col-lg-6 col-md-6">
 						<div class="card">
 							<img class="img-fluid" src="{{url('dashboard_assets/images/courses/pic1.jpg')}}" alt="">
 							<div class="card-body">
-								<h4><a href="#">تعلم مبادئ تشغيل ويندوز، مجموعة مايكروسوفت أوفيس ، انترنت</a></h4>
+								<h4><a href="#">{{$c['course_name']}}</a></h4>
 								<ul class="list-group mb-3 list-group-flush">
-									<li class="list-group-item px-0 border-top-0 d-flex justify-content-between"><span class="mb-0 text-muted">1 يناير</span>
-										<a href="javascript:void(0);"><i class="la la-heart-o mr-1"></i><strong>2023</strong></a></li>
-									<li class="list-group-item px-0 d-flex justify-content-between">
-										<span class="mb-0">مدة الدورة</span><strong>أربعة أشهر</strong></li>
-									<li class="list-group-item px-0 d-flex justify-content-between">
-										<span><i class="fa fa-graduation-cap text-primary mr-2"></i>عدد المتدربين</span><strong>+20</strong></li>
+									<li class="list-group-item px-0 border-top-0 d-flex justify-content-between"><span class="mb-0 text-muted">{{$c['start_date']}}</span>
+										<span><i class="fa fa-graduation-cap text-primary mr-2"></i>عدد المتدربين المسموح به</span><strong>{{$c['max']}}</strong></li>
 								</ul>
-								<a href="#" class="btn btn-primary">المزيد من التفاصيل</a>
+								
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-3 col-xxl-4 col-lg-6 col-md-6">
-						<div class="card">
-							<img class="img-fluid" src="{{url('dashboard_assets/images/courses/pic2.jpg')}}" alt="">
-							<div class="card-body">
-								<h4><a href="#">تعلم مبادئ تشغيل ويندوز ، مبادئ الطباعة</a></h4>
-								<ul class="list-group mb-3 list-group-flush">
-									<li class="list-group-item px-0 border-top-0 d-flex justify-content-between"><span class="mb-0 text-muted">1 يناير</span>
-										<a href="javascript:void(0);"><i class="la la-heart-o mr-1"></i><strong>2023</strong></a></li>
-									<li class="list-group-item px-0 d-flex justify-content-between">
-										<span class="mb-0">مدة الدورة</span><strong>أربعة أشهر</strong></li>
-									<li class="list-group-item px-0 d-flex justify-content-between">
-										<span><i class="fa fa-graduation-cap text-primary mr-2"></i>عدد المتدربين</span><strong>+20</strong></li>
-								</ul>
-								<a href="#" class="btn btn-primary">المزيد من التفاصيل</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-xxl-4 col-lg-6 col-md-6">
-						<div class="card">
-							<img class="img-fluid" src="{{url('dashboard_assets/images/courses/pic3.jpg')}}" alt="">
-							<div class="card-body">
-								<h4><a href="#">تعليم المتدرب على الفكرة والتصميم والنشر في التصميم الدعائي والتجاري</a></h4>
-								<ul class="list-group mb-3 list-group-flush">
-									<li class="list-group-item px-0 border-top-0 d-flex justify-content-between"><span class="mb-0 text-muted">1 يناير</span>
-										<a href="javascript:void(0);"><i class="la la-heart-o mr-1"></i><strong>2023</strong></a></li>
-									<li class="list-group-item px-0 d-flex justify-content-between">
-										<span class="mb-0">مدة الدورة</span><strong>أربعة أشهر</strong></li>
-									<li class="list-group-item px-0 d-flex justify-content-between">
-										<span><i class="fa fa-graduation-cap text-primary mr-2"></i>عدد المتدربين</span><strong>+20</strong></li>
-								</ul>
-								<a href="#" class="btn btn-primary">المزيد من التفاصيل</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-xxl-4 col-lg-6 col-md-6">
-                        <div class="card">
-							<img class="img-fluid" src="{{url('dashboard_assets/images/courses/pic4.jpg')}}" alt="">
-							<div class="card-body">
-								<h4><a href="#">رسم الخرائط باستخدام الحاسوب بمنظور ثنائي الابعاد</a></h4>
-								<ul class="list-group mb-3 list-group-flush">
-									<li class="list-group-item px-0 border-top-0 d-flex justify-content-between"><span class="mb-0 text-muted">1 يناير</span>
-										<a href="javascript:void(0);"><i class="la la-heart-o mr-1"></i><strong>2023</strong></a></li>
-									<li class="list-group-item px-0 d-flex justify-content-between">
-										<span class="mb-0">مدة الدورة</span><strong>أربعة أشهر</strong></li>
-									<li class="list-group-item px-0 d-flex justify-content-between">
-										<span><i class="fa fa-graduation-cap text-primary mr-2"></i>عدد المتدربين</span><strong>+20</strong></li>
-								</ul>
-								<a href="#" class="btn btn-primary">المزيد من التفاصيل</a>
-							</div>
-						</div>
-					</div>
+                    @endforeach
 					
-					<div class="col-xl-6 col-xxl-6 col-lg-6 col-md-12 col-sm-12">
-						<div class="card">
-                            <div class="card-body">
-								<form action="#" method="post">
-									<div class="form-group">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">الى</span>
-											</div>
-											<input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">الموضوع</span>
-											</div>
-											<input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="summernote"></div>
-									</div>
-									<div class="row align-items-center">
-										<div class="col-lg-6">
-											<div class="fallback w-100">
-												<input type="file" class="dropify" data-default-file="">
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<button type="button" class="btn btn-primary float-right">
-												ارسال <i class="fa fa-paper-plane-o"></i>
-											</button>									
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
+					
+					
+					
+					
 					<div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="card">
                             <div class="card-header">
@@ -342,50 +249,24 @@
                                                 <th scope="col">الاسم</th>
                                                 <th scope="col">تاريخ القبول</th>
                                                 <th scope="col">الحالة</th>
-                                                <th scope="col">الدورة</th>
-                                                <th scope="col">الرسوم</th>
-                                                <th scope="col">نعديل</th>
+                                               
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $i=0?>
                                             <tr>
-                                                <td>01</td>
-												<td>صفاء عجينة</td>
-                                                <td> 4\8\2022</td>
-                                                <td><span class="badge badge-rounded badge-primary">تم القبول</span></td>
-                                                <td>فوتوشوب</td>
-                                                <td>220$</td>
-                                                <td>
-                                                    <a href="dashboard_edit-student.html" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>02 </td>
-                                                <td>الحاكمة سليمان</td>
+                                                @foreach ($trainee as $t)
+                                                <?php $i++?>
+                                            
+                                                <td>{{$i}}</td>
+												<td>{{$t['first_name']}} </td>
+                                                <td> {{$t['created_at']}}</td>
+                                                <td><span class="badge badge-rounded badge-primary" style="background-color: green">تم القبول</span></td>
                                                 
-												<td>31\7\2022</td>
-                                                <td><span class="badge badge-rounded badge-warning">قيد الانتظار</span></td>
-                                                <td>دورة سكرتارية</td>
-                                                <td>0$</td>
-                                                <td>
-                                                    <a href="dashboard_edit-student.html" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>03 </td>
-                                                <td>قيس الغوج</td>
                                                 
-												<td>20\11\2021</td>
-                                                <td><span class="badge badge-rounded badge-danger">ملغي</span></td>
-                                                <td>دورة أوتوكاد </td>
-                                                <td>320$</td>
-                                                <td>
-                                                    <a href="dashboard_edit-student.html" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
-                                                </td>
                                             </tr>
+                                            @endforeach
+                                            
                                            
                                         </tbody>
                                     </table>

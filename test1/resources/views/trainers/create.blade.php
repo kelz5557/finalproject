@@ -27,15 +27,7 @@
                                 <form action="{{route('alltrainers.store')}}" method="POST">
                                     @csrf
 									<div class="row">
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">الاسم الاخير  </label>
-												<input name="lastname" value="{{old('lastname')}}" type="text" class="form-control">
-												@error('lastname')
-												<div class="form-error">{{"الرجاء ادخال البيانات بشكل صحيح"}}</div>
-											@enderror
-											</div>
-										</div>
+										
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
 												<label class="form-label">الاسم الاول </label>
@@ -43,6 +35,15 @@
 												@error('firstname')
 													<div class="form-error">{{"الرجاء ادخال البيانات بشكل صحيح"}}</div>
 												@enderror
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-12">
+											<div class="form-group">
+												<label class="form-label">الاسم الاخير  </label>
+												<input name="lastname" value="{{old('lastname')}}" type="text" class="form-control">
+												@error('lastname')
+												<div class="form-error">{{"الرجاء ادخال البيانات بشكل صحيح"}}</div>
+											@enderror
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">

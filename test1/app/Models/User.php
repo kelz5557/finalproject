@@ -45,4 +45,7 @@ class User extends Authenticatable
     public function ad(){
         return $this->hasone(ad::class);
     }
+    public function receipt() {
+        return $this->belongsToMany(course::class,trainee::class);
+        }
 }

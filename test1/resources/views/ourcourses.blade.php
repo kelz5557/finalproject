@@ -85,44 +85,16 @@
                     <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar">
-                    <form class="navbar-form navbar-right">
-                        <input type="text" placeholder="ابحث هنا" class="form-control">
-                        <button class="search-btn"><span class="icon-search-icon"></span></button>
-                    </form>
                     <ul class="nav navbar-nav">
-                        <li class="dropdown"> <a data-toggle="dropdown" href="/">الصفحة الرئيسية <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">الرئيسية 1</a></li>
-                                <li><a href="#">الرئيسية 2</a></li>
-                            </ul>
+                        <li > <a  href="{{url('/')}}">الصفحة الرئيسية <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            
                         </li>
-                        <li> <a href="#">عن المركز</a></li>
-                        <li class="dropdown"> <a data-toggle="dropdown" href="">دوراتنا <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{url('/ourcourses')}}">كل الدورات</a></li>
-                                <li><a href="#"> دورات الموظفين</a></li>
-                                <li><a href="#">دورات الخارجية</a></li>
-                                
-                            </ul>
+                        <li> <a href="{{url('/aboutus')}}">عن المركز</a></li>
+                        <li> <a  href="{{url('/ourcourses')}}">دوراتنا <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                           
                         </li>
-                        <li> <a href="gallery.html">معرض الصور</a></li>
-                        <li class="dropdown"> <a data-toggle="dropdown" href="#">الصفحات <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="visible-xs"><a href="register.html">Register</a></li>
-                                <li class="visible-xs"><a href="apply-online.html">Apply online</a></li>
-                                <li class="visible-xs"><a href="blog.html">Blog</a></li>
-                                <li class="visible-xs"><a href="faq.html">FAQs</a></li>
-                                <li><a href="news.html">Latest News</a></li>
-                                <li><a href="testimonials.html">Testimonials</a></li>
-                                <li><a href="faq1.html">FAQ 1</a></li>
-                                <li><a href="faq2.html">FAQ 2</a></li>
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                <li class="hidden-xs"><a href="privacy.html">Privacy Policy</a></li>
-                                <li class="hidden-xs"><a href="terms.html">Terms of Use</a></li>
-                                <li class="hidden-xs"><a href="generic-ui.html">Generic UI</a></li>
-                            </ul>
-                        </li>
-                        <li> <a href="contact.html">تواصل معنا</a></li>
+                        
+                    </ul>
                     </ul>
                 </div>
             </div>

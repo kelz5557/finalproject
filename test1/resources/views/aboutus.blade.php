@@ -95,22 +95,16 @@
                     <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar">
-                    <form class="navbar-form navbar-right">
-                        <input type="text" placeholder="ابحث هنا" class="form-control">
-                        <button class="search-btn"><span class="icon-search-icon"></span></button>
-                    </form>
                     <ul class="nav navbar-nav">
-                        <li class="dropdown"> <a data-toggle="dropdown" href="#">الصفحة الرئيسية <i class="fa fa-angle-down" aria-hidden="true"></i></a>  </li>
-                        <li> <a href="{{url('/aboutus')}}">عن المركز</a></li>
-                        <li class="dropdown"> <a data-toggle="dropdown" href="#">دوراتنا <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{url('/ourcourses')}}">كل الدورات</a></li>
-                               
-                                
-                            </ul>
+                        <li > <a  href="{{url('/')}}">الصفحة الرئيسية <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            
                         </li>
-                        <li> <a href="#">معرض الصور</a></li>
-                        <li> <a href="#">تواصل معنا</a></li>
+                        <li> <a href="{{url('/aboutus')}}">عن المركز</a></li>
+                        <li> <a  href="{{url('/ourcourses')}}">دوراتنا <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                           
+                        </li>
+                        
+                    </ul>
                     </ul>
                 </div>
             </div>

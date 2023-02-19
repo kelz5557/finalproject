@@ -22,7 +22,7 @@
 					<div class="col-lg-12">
 						<div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">تحصيل الرسوم</h4>
+                                <h4 class="card-title">كل الرسوم</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -31,40 +31,30 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>اسم المتدرب</th>
+                                                <th>اسم الدورة</th>
                                                 <th>رقم الايصال</th>
-                                                <th>نوع الدفع </th>
-												<th>الحالة </th>
-                                                <th>التاريخ</th>
                                                 <th>المبلغ</th>
+                                                <th>التاريخ</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $i=0 ?>
+                                            <?php  $cost=0 ?>
+                                            @foreach ($r as $receipt)
+                                            <?php $i++ ?>  
+                                            <?php $cost+=$receipt->cost ?>
                                             <tr>
-                                                <td>01</td>
-                                                <td>قيس الغوج</td>
-                                                <td>#54605</td>
-                                                 <td>نقدي</td>
-                                                <td><span class="badge badge-success">مدفوع</span></td>
-                                                <td>2011/04/25</td>
-                                                <td><strong>120$</strong></td>
+                                                <td>{{$i}}</td>
+                                                <td> {{$receipt->trainee_name}}</td>
+                                                <td> {{$receipt->course_name}}</td>
+                                                <td>{{$receipt->id}}</td>
+                                                <td><span class="badge badge-success">{{$receipt->cost}}</span></td>
+                                                <td>{{$receipt->created_at}}</td>
                                             </tr>
+                                            @endforeach
                                             <tr>
-                                                <td>02</td>
-                                                <td>الحاكمة سليمان</td>
-                                                <td>#45695</td>
-                                                 <td>نقدي</td>
-                                                <td><span class="badge badge-success">مدفوع</span></td>
-                                                <td>2016/08/10</td>
-                                                <td><strong>225$</strong></td>
-                                            </tr>
-                                            <tr>
-                                                <td>03</td>
-                                                <td>صفاء عجينة</td>
-                                                <td>#21999</td>
-                                                 <td>نقدي</td>
-                                                <td><span class="badge badge-success">مدفوع</span></td>
-                                                <td>2021/09/02</td>
-                                                <td><strong>120$</strong></td>
+                                                <td><strong>اجمالي الرسوم</strong></td>
+                                                <td><span class="badge badge-success">{{$cost}}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>

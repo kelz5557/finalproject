@@ -61,7 +61,7 @@
 														<td>{{$index['email']}}</td>
                                                         <td>{{$index['created_at']}}</td>
 														<td>
-															<a href="{{route('requests.edit',$index['id'])}}" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
+															<a href="{{route('requests.edit',$index['id'])}}" class="btn btn-sm btn-primary"style="background-color:rgb(67, 180, 67)">قبول</a>
 														</td>
 															<td>
 																<form action="{{route('requests.destroy',['request'=>$index['id']])}}" method="POST" >

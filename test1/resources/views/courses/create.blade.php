@@ -63,6 +63,16 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="form-label">تاريخ البداية</label>
+                                                    <input type="date" name="startdate" class="datepicker form-control" id="datepicker1">
+                                                    @error('startdate')
+                                                    <div class="form-error">{{"الرجاء ادخال البيانات بشكل صحيح"}}</div>
+                                                @enderror
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
 												<label class="form-label">تاريخ الانتهاء </label>
 												<input type="date" name="enddate" class="datepicker form-control" id="datepicker1">
@@ -72,16 +82,7 @@
 											</div>
                                             
 										</div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">تاريخ البداية</label>
-												<input type="date" name="startdate" class="datepicker form-control" id="datepicker1">
-                                                @error('startdate')
-												<div class="form-error">{{"الرجاء ادخال البيانات بشكل صحيح"}}</div>
-											@enderror
-											</div>
-                                            
-										</div>
+                                        
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-group">
                                                     <label class="form-label">تكلفة الدورة</label>

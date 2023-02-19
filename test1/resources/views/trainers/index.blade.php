@@ -35,27 +35,7 @@
 										<a href="{{url('/dashboard/alltrainers/create')}}" class="btn btn-primary">إضافة جديد+</a>
 										
 									</div>
-									<div class="mx-auto pull-right">
-										<div class="">
-											<form action="#" method="GET" role="search">
-							
-												<div class="input-group">
-													<span class="input-group-btn mr-5 mt-1">
-														<button class="btn btn-info" type="submit" title="Search projects">
-															<span class="fas fa-search"></span>
-														</button>
-													</span>
-													<input type="text" class="form-control mr-2" name="term" placeholder="Search projects" id="term">
-													<a href="#" class=" mt-1">
-														<span class="input-group-btn">
-															<button class="btn btn-danger" type="button" title="Refresh page">
-																<span class="fas fa-sync-alt"></span>
-															</button>
-														</span>
-													</a>
-												</div>
-											</form>
-										</div>
+									
 									</div>
 									<div class="card-body">
 										<div class="table-responsive">
@@ -69,6 +49,7 @@
 														<th>رقم الهاتف</th>
 														<th>البريد الالكتروني</th>
 														<th>تعديل</th>
+														<th>حذف</th>
 													</tr>
 												</thead>
 												<?php $i=0 ?>
@@ -77,7 +58,7 @@
 													<tr>
 														<td><strong>{{$i}}</strong></td>
 														<td><a href="{{route('alltrainers.show',['alltrainer'=>$index['id']])}}">{{$index['last_name']}} {{$index['first_name']}}</a></td>
-														<td></td>
+														
                                                         <td>{{$index['specialization']}}</td>
 														
 														<td><strong>{{$index['phone']}}</strong></td>

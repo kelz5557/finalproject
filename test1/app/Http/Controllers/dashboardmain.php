@@ -1,10 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\ad;
+use App\Models\receipt;
+use App\Models\trainee;
+use App\Models\course;
 
 use Illuminate\Http\Request;
-use App\Models\course_trainee;
-class traineecourses extends Controller
+
+class dashboardmain extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +17,9 @@ class traineecourses extends Controller
      */
     public function index()
     {
-        //
+        
+        return view ('dashboardindex',['trainee'=>trainee::latest()->take(10)->get(),
+        'course'=>course::latest()->take(12)->get()]);
     }
 
     /**
@@ -23,7 +29,7 @@ class traineecourses extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -34,14 +40,7 @@ class traineecourses extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'coursename'=>['required','integer'],
-        ]);
-        $trainee= new course_trainee();
-        $trainee->trainee_id=strip_tags($request->input('trainee_id'));
-        $trainee->course_id=strip_tags($request->input('coursename'));
-        $trainee->save();
-        return back();
+        //
     }
 
     /**

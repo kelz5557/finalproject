@@ -1,8 +1,6 @@
 @extends('layout')
 @section('content')
-<div >
- <h3>{{$index['first_name']}} </h3>
-</div>
+
 
 
         <!--**********************************
@@ -46,8 +44,9 @@
 														<th>رقم </th>
 														<th>courses</th>
 														<th>تاريخ القبول</th>
-														
+														<th>سعر الدورة </th>
 														<th>حذف</th>
+                                                        <th>الدفع</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -55,10 +54,10 @@
 													@foreach($index->course as $tests)
 													<?php $i++ ?>	
 													<tr>
-														<td><strong>{{$tests['id']}}</strong></td>
+														<td><strong>{{$i}}</strong></td>
 														<td>{{$tests['course_name']}}</td>
                                                         <td>{{$tests['created_at']}}</td>
-														
+														<td>{{$tests['cost']}}</td>
 														<td>
                                                             
 															<form action="{{route('deletecourses',['course_id'=>$tests['id'],'trainee_id'=>$index['id']])}}" method="POST" >
@@ -68,6 +67,17 @@
 															</form>
 														</td>
                                                         
+                                                           
+                                                           <td>
+                                                            <form action="{{route('addreceipt',['course_id'=>$tests['id'],'coursename'=>$tests['course_name'],'trainee_id'=>$index['id'],'traineename'=>$index['first_name'],'cost'=>$tests['cost']])}}" method="POST" >
+                                                                @csrf
+                                                                <input type="submit" value="دفع ثمن الدورة" class="btn btn-sm btn-primary" style="font-weight: bold;background-color:rgb(67, 180, 67);color: black;"></input>
+                                                            </form>
+                                                            </td>
+
+                                                          
+                                                                
+                                                        
 														
 													</tr>
 													
@@ -76,7 +86,7 @@
 											
 												</tbody>
 											</table>
-                                            <div>
+                                            <div style=" margin:20px ;">
                                                 <h3>  اضافة دورة جديدة </h3>
                                             </div>
                                             <form action="{{route('traineecourses.store')}}" method="POST">
@@ -88,6 +98,7 @@
                                                         <div class="form-group">
                                                             <label class="form-label"><strong>إسم الدورة</strong></label>
                                                             <select name="coursename" type="text" class="form-control">
+                                                                <option value="">الدورة</option>
                                                                 @foreach ($test as $t)
                                                                 <option value="{{$t->id}}">{{$t->course_name}}</option>
                                                                 @endforeach

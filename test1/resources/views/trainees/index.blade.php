@@ -46,6 +46,7 @@
 														<th>تاريخ القبول</th>
 														<th>تعديل</th>
 														<th>حذف</th>
+														
 													</tr>
 												</thead>
 												<tbody>
@@ -69,6 +70,7 @@
 																<input type="submit" value="حذف" class="btn btn-sm btn-danger"></input>
 															</form>
 														</td>
+														
 													</tr>
 													
                                                     @endforeach

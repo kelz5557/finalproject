@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\trainee;
 use App\Models\course;
+use App\Models\receipt;
 class traineecontroller extends Controller
 {
     /**
@@ -44,7 +45,7 @@ class traineecontroller extends Controller
     {
 
         $request->validate([
-            'firstname'=>['required','string'],
+            'firstname'=>['required','alpha'],
             'edlevel'=>['required','string'],
             'email'=>['required','string'],
             'address'=>['required','string'],
@@ -78,7 +79,9 @@ class traineecontroller extends Controller
     {
         return view('trainees.show',[
             'index'=>trainee::findorfail($allstudent),
-            'test'=>course::all()
+            'test'=>course::all(),
+            'receipt'=>receipt::all()
+
         ]);
     }
 
