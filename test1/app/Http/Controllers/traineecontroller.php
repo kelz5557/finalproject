@@ -45,7 +45,7 @@ class traineecontroller extends Controller
     {
 
         $request->validate([
-            'firstname'=>['required','alpha'],
+            'firstname'=>['required','string'],
             'edlevel'=>['required','string'],
             'email'=>['required','string'],
             'address'=>['required','string'],

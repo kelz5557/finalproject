@@ -139,8 +139,9 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="{{url('/dashboard')}}">لوحة التحكم</a></li>
+                            @if(Auth::user() && Auth::user()->level==1)
                             <li><a href="{{url('/register')}}">اضافة مستخدمين</a></li>
-                            
+                            @endif
                         </ul>
                     </li>
 					

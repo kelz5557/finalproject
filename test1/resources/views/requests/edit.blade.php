@@ -72,7 +72,7 @@
 											<div class="form-group">
 												<label   class="form-label">الجنس</label>
 												<select name="gender" class="form-control">
-													<option value="" disabled selected>الجنس</option>
+													<option value="{{$index['gender']}}"> {{$index['gender']}}</option>
 													<option value="ذكر">ذكر</option>
 													<option value="انثى">انثى</option>
 												</select>

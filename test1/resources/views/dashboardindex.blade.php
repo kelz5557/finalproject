@@ -131,8 +131,9 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="{{url('/dashboard')}}">لوحة التحكم</a></li>
+                            @if(Auth::user() && Auth::user()->level==1)
                             <li><a href="{{url('/register')}}">إضافة مستخدمين</a></li>
-                            
+                            @endif
                         </ul>
                     </li>
 					
@@ -223,7 +224,8 @@
 								<h4><a href="#">{{$c['course_name']}}</a></h4>
 								<ul class="list-group mb-3 list-group-flush">
 									<li class="list-group-item px-0 border-top-0 d-flex justify-content-between"><span class="mb-0 text-muted">{{$c['start_date']}}</span>
-										<span><i class="fa fa-graduation-cap text-primary mr-2"></i>عدد المتدربين المسموح به</span><strong>{{$c['max']}}</strong></li>
+                                    </li>
+										<li><span><i class="fa fa-graduation-cap text-primary mr-2"></i>عدد المتدربين المسموح به   :       </span><strong>{{$c['max']}}</strong></li>
 								</ul>
 								
 							</div>
